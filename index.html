@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade de Recuperação - 2º Trimestre</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Programação de Clientes Web</h1>
+    <p>Atividade de Recuperação - 2º Trimestre</p>
+  </header>
+
+  <main class="container">
+    <!-- Seção de Exercícios de Arrays -->
+    <section class="card">
+      <h2>1. Arrays e Lógica</h2>
+      
+      <div class="exercise">
+        <h3>Ordenação Manual (2 e 3 números / Bubble Sort)</h3>
+        <button onclick="testarOrdenacao()">Testar Ordenações no Console/Alert</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Inverter Vetor Customizado</h3>
+        <button onclick="inverterArrayUsuario()">Inverter N Números</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Buscar Todos os Índices</h3>
+        <button onclick="testarBuscaIndices()">Testar Busca de Índices</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Sequências (Fibonacci e Fatorial)</h3>
+        <button onclick="gerarFibonacci()">Gerar Fibonacci</button>
+        <button onclick="gerarFatorial()">Gerar Fatorial</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Jogo da Velha (Matriz)</h3>
+        <div id="tabuleiro" class="tabuleiro"></div>
+        <p id="status-velha">Vez do Jogador: X</p>
+        <button onclick="reiniciarJogoVelha()">Reiniciar Jogo</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Soma, Média e Primos</h3>
+        <button onclick="testarEstatisticas()">Calcular Soma/Média/Primos</button>
+      </div>
+
+      <div class="exercise">
+        <h3>Frutas & Estados (Select)</h3>
+        <button onclick="ordenarFrutas()">Ordenar Frutas (Console)</button>
+        <br><br>
+        <label for="select-estados">Estados Ordenados:</label>
+        <select id="select-estados"></select>
+      </div>
+
+      <div class="exercise">
+        <h3>Agenda Semanal (Matriz 5x2)</h3>
+        <button onclick="montarAgenda()">Preencher Agenda</button>
+        <div id="saida-agenda"></div>
+      </div>
+    </section>
+
+    <!-- Seção DOM Básico -->
+    <section class="card">
+      <h2>2. Exercícios de DOM</h2>
+      
+      <div class="exercise">
+        <h3>Quadrados Coloridos Interativos</h3>
+        <button id="btn-criar-quadrado">Criar Quadrado</button>
+        <div id="container-quadrados" class="box-container"></div>
+      </div>
+
+      <div class="exercise">
+        <h3>Lista Dinâmica de Nomes</h3>
+        <input type="text" id="input-nome" placeholder="Digite um nome...">
+        <button onclick="adicionarNome()">Adicionar</button>
+        <ul id="lista-nomes"></ul>
+      </div>
+    </section>
+
+    <!-- Seção DOM e Formulários -->
+    <section class="card">
+      <h2>3. DOM & Formulários</h2>
+
+      <div class="exercise">
+        <h3>Troca de Cor de Fundo</h3>
+        <p>Botoes:</p>
+        <button onclick="mudarCorFundo('red')">Vermelho</button>
+        <button onclick="mudarCorFundo('green')">Verde</button>
+        <button onclick="mudarCorFundo('blue')">Azul</button>
+        <button onclick="mudarCorFundo('yellow')">Amarelo</button>
+
+        <p>Links (Hover):</p>
+        <a href="#" onmouseover="mudarCorFundo('red')">Vermelho</a> |
+        <a href="#" onmouseover="mudarCorFundo('green')">Verde</a> |
+        <a href="#" onmouseover="mudarCorFundo('blue')">Azul</a> |
+        <a href="#" onmouseover="mudarCorFundo('yellow')">Amarelo</a>
+
+        <p>Select:</p>
+        <select onchange="mudarCorFundo(this.value)">
+          <option value="white">Selecione uma cor</option>
+          <option value="red">Vermelho</option>
+          <option value="green">Verde</option>
+          <option value="blue">Azul</option>
+          <option value="yellow">Amarelo</option>
+        </select>
+      </div>
+
+      <div class="exercise">
+        <h3>Ocultar / Mostrar Parágrafo</h3>
+        <button onclick="alternarParagrafo()">Ocultar/Mostrar</button>
+        <p id="texto-toggle">Este é um parágrafo que pode ser ocultado ou exibido com um clique!</p>
+      </div>
+
+      <div class="exercise">
+        <h3>Validação de Login</h3>
+        <form id="form-login" onsubmit="return validarLogin(event)">
+          <input type="text" id="login" placeholder="Login" required><br><br>
+          <input type="password" id="senha" placeholder="Senha (6-10 caracteres)" required><br><br>
+          <input type="password" id="confirma-senha" placeholder="Confirmar Senha" required><br><br>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+
+      <div class="exercise">
+        <h3>Verificador de Palíndromo</h3>
+        <input type="text" id="palavra-palindromo" placeholder="Digite uma palavra">
+        <button onclick="verificarPalindromo()">Verificar</button>
+        <p id="res-palindromo"></p>
+      </div>
+
+      <div class="exercise">
+        <h3>Inverter 5 Nomes em Form</h3>
+        <form id="form-inverter">
+          <input type="text" class="nome-inv" placeholder="Nome 1"><br>
+          <input type="text" class="nome-inv" placeholder="Nome 2"><br>
+          <input type="text" class="nome-inv" placeholder="Nome 3"><br>
+          <input type="text" class="nome-inv" placeholder="Nome 4"><br>
+          <input type="text" class="nome-inv" placeholder="Nome 5"><br><br>
+          <button type="button" onclick="inverterCamposNomes()">Inverter Nomes</button>
+        </form>
+      </div>
+
+      <div class="exercise">
+        <h3>Cadastro de Cliente (PF / PJ)</h3>
+        <form id="form-cliente">
+          <input type="text" placeholder="Nome" required><br><br>
+          <label><input type="radio" name="tipoPessoa" value="PF" onchange="atualizarTipoPessoa()" checked> Pessoa Física</label>
+          <label><input type="radio" name="tipoPessoa" value="PJ" onchange="atualizarTipoPessoa()"> Pessoa Jurídica</label><br><br>
+          
+          <input type="text" id="cpf" placeholder="CPF (apenas números)"><br><br>
+          <input type="text" id="cnpj" placeholder="CNPJ" disabled><br><br>
+          <input type="text" id="nascimento" placeholder="Data de Nascimento (apenas números)"><br><br>
+          <input type="text" placeholder="Endereço"><br><br>
+          <input type="text" id="cep" placeholder="CEP (apenas números)"><br><br>
+          <input type="text" placeholder="Telefone"><br><br>
+          <input type="email" placeholder="E-mail"><br><br>
+        </form>
+      </div>
+
+      <div class="exercise">
+        <h3>Intercalar Palavras</h3>
+        <input type="text" id="p1" placeholder="Palavra 1">
+        <input type="text" id="p2" placeholder="Palavra 2">
+        <button onclick="intercalarCampos()">Intercalar</button><br><br>
+        <input type="text" id="resultado-intercalado" disabled placeholder="Resultado intercalado">
+      </div>
+
+      <div class="exercise">
+        <h3>Estatísticas de 3 Números</h3>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <input type="number" id="num3" placeholder="Número 3">
+        <button onclick="calcularEstatisticasTabela()">Processar</button>
+        <div id="tabela-estatisticas"></div>
+      </div>
+
+      <div class="exercise">
+        <h3>Buscador e Destaque de Texto</h3>
+        <input type="text" id="termo-busca" placeholder="Palavra a pesquisar">
+        <button onclick="pesquisarEDestacar()">Pesquisar</button>
+        <p id="msg-busca"></p>
+        <div id="texto-destaque" class="texto-box">
+          Desenvolver aplicações web requer bastante prática em JavaScript. O DOM nos permite manipular elementos HTML, enquanto os arrays ajudam a organizar os dados. Praticar lógica com JavaScript é essencial para evoluir como desenvolvedor.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h3>Galeria MxN Ampliada</h3>
+        <div class="galeria">
+          <img src="https://picsum.photos/id/10/100/100" onclick="ampliarImagem(this.src)" alt="Mini 1">
+          <img src="https://picsum.photos/id/20/100/100" onclick="ampliarImagem(this.src)" alt="Mini 2">
+          <img src="https://picsum.photos/id/30/100/100" onclick="ampliarImagem(this.src)" alt="Mini 3">
+          <img src="https://picsum.photos/id/40/100/100" onclick="ampliarImagem(this.src)" alt="Mini 4">
+        </div>
+        <h4>Visualização Ampliada:</h4>
+        <div id="area-ampliada">
+          <p>Clique em uma imagem acima para ampliar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
